@@ -12,28 +12,30 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
+import androidx.navigation.NavHostController
+import com.example.android_studio_scaffold.nav.Routes
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun MyTopAppBar(){
+fun MyTopAppBar(navController: NavHostController){
     TopAppBar(
         title = { Text(text = "Barra superior") },
         colors = TopAppBarDefaults.topAppBarColors(
-            containerColor = Color.Red,
-            titleContentColor = Color.White,
-            navigationIconContentColor = Color.White,
-            actionIconContentColor = Color.White
+            containerColor = Color.LightGray,
+            titleContentColor = Color.Black,
+            navigationIconContentColor = Color.Black,
+            actionIconContentColor = Color.Black
         ),
         navigationIcon = {
-            IconButton(onClick = { TODO() }) {
+            IconButton(onClick = { navController.popBackStack() }) {
                 Icon(imageVector = Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Enrere")
             }
         },
         actions = {
-            IconButton(onClick = { TODO() }) {
+            IconButton(onClick = { navController.navigate(Routes.Search.route) }) {
                 Icon(imageVector = Icons.Filled.Search, contentDescription = "Buscar")
             }
-            IconButton(onClick = { TODO() }) {
+            IconButton(onClick = { navController.navigate(Routes.Add.route) }) {
                 Icon(imageVector = Icons.Filled.Add, contentDescription = "Afegir")
             }
         }

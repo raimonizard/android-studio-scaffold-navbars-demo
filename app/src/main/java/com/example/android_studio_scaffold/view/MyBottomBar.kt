@@ -19,7 +19,7 @@ fun MyBottomBar(
 ) {
     val bottomNavigationItems by myViewModel.bottomNavigationItems.observeAsState(emptyList())
 
-    NavigationBar(containerColor = Color.Red) {
+    NavigationBar(containerColor = Color.LightGray, contentColor = Color.Black) {
         val navBackEntry by navigationController.currentBackStackEntryAsState()
         val currentRoute = navBackEntry?.destination?.route
 
