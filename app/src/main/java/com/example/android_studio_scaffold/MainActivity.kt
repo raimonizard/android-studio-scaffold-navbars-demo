@@ -32,15 +32,7 @@ class MainActivity : ComponentActivity() {
 
                 // Crida la primera vista
                 ScaffoldView(myViewModel, navController)
-                }
             }
         }
-    }
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    AndroidstudioscaffoldTheme {
-        TODO()
     }
 }

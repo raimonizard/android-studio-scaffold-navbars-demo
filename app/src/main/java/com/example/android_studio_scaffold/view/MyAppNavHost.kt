@@ -1,6 +1,5 @@
 package com.example.android_studio_scaffold.view
 
-import androidx.activity.viewModels
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController

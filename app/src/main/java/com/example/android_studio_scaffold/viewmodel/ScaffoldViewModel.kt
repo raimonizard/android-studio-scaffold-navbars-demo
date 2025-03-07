@@ -21,7 +21,7 @@ class ScaffoldViewModel : ViewModel {
      * que inicialitza l'atribut els valors de la llista
      * de l'atribut privat _bottomNavigationItems
      */
-    constructor(): super(){
+    constructor() : super() {
         this._bottomNavigationItems.value = listOf(
             BottomNavigationScreens.Home,
             BottomNavigationScreens.Favorite,
@@ -35,9 +35,12 @@ class ScaffoldViewModel : ViewModel {
 
     fun addToHistory(text: String) {
         if (text.isNotBlank()) {
-            val currentHistory = _searchHistory.value.orEmpty() // Obté la llista actual o una llista buida
-            this._searchHistory.value = listOf(text) + currentHistory // Afegeix el nou text al principi
-            this._searchedText.value = "" // Neteja el text després de fer la cerca
+            // Obté la llista actual o una llista buida
+            val currentHistory = this._searchHistory.value.orEmpty()
+            // Afegeix el nou text al principi
+            this._searchHistory.value = listOf(text) + currentHistory
+            // Neteja el text després de fer la cerca
+            this._searchedText.value = ""
         }
     }
 

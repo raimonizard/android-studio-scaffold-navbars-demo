@@ -25,7 +25,7 @@ fun MyBottomBar(
 
         bottomNavigationItems.forEach { item ->
             NavigationBarItem(
-                icon = { Icon(item.icon, contentDescription = item.label) }, // ← correcció de `contentDescription`
+                icon = { Icon(item.icon, contentDescription = item.label) },
                 label = { Text(item.label) },
                 selected = currentRoute == item.route,
                 onClick = {
