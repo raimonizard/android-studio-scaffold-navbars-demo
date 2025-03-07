@@ -9,6 +9,13 @@ class ScaffoldViewModel : ViewModel {
     private val _bottomNavigationItems = MutableLiveData<List<BottomNavigationScreens>>(emptyList())
     public val bottomNavigationItems: LiveData<List<BottomNavigationScreens>> = _bottomNavigationItems
 
+    private val _searchedText = MutableLiveData("")
+    public val searchedText: LiveData<String> = _searchedText
+
+    private val _searchHistory = MutableLiveData<List<String>>(emptyList())
+    public val searchHistory: LiveData<List<String>> = _searchHistory
+
+
     /**
      * Constructor de la classe ScaffoldViewModel
      * que inicialitza l'atribut els valors de la llista
@@ -20,5 +27,21 @@ class ScaffoldViewModel : ViewModel {
             BottomNavigationScreens.Favorite,
             BottomNavigationScreens.Settings
         )
+    }
+
+    fun onSearchTextChange(text: String) {
+        this._searchedText.value = text
+    }
+
+    fun addToHistory(text: String) {
+        if (text.isNotBlank()) {
+            val currentHistory = _searchHistory.value.orEmpty() // Obté la llista actual o una llista buida
+            this._searchHistory.value = listOf(text) + currentHistory // Afegeix el nou text al principi
+            this._searchedText.value = "" // Neteja el text després de fer la cerca
+        }
+    }
+
+    fun clearHistory() {
+        this._searchHistory.value = emptyList()
     }
 }

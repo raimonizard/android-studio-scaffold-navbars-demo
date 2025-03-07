@@ -21,7 +21,7 @@ fun ScaffoldView(myViewModel: ScaffoldViewModel, navController: NavHostControlle
                 .fillMaxSize()
                 .padding(paddingValues)
         ){
-            MyAppNavHost(navController)
+            MyAppNavHost(navController, myViewModel, paddingValues)
         }
     }
 }

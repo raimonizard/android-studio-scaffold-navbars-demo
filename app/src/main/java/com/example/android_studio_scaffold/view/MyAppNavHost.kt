@@ -1,5 +1,7 @@
 package com.example.android_studio_scaffold.view
 
+import androidx.activity.viewModels
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
@@ -9,7 +11,9 @@ import com.example.android_studio_scaffold.viewmodel.ScaffoldViewModel
 
 @Composable
 fun MyAppNavHost(
-    navController: NavHostController
+    navController: NavHostController,
+    myViewModel: ScaffoldViewModel,
+    paddingValues: PaddingValues
 ) {
     NavHost(
         navController = navController,
@@ -18,7 +22,7 @@ fun MyAppNavHost(
         composable(Routes.Home.route) { HomeScreen() }
         composable(Routes.Favorite.route) { FavoriteScreen() }
         composable(Routes.Settings.route) { SettingsScreen() }
-        composable(Routes.Search.route) { SearchScreen() }
+        composable(Routes.Search.route) { SearchScreen(myViewModel, paddingValues) }
         composable(Routes.Add.route) { AddScreen() }
     }
 }
