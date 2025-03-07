@@ -14,7 +14,7 @@ class ScaffoldViewModel : ViewModel {
      * que inicialitza l'atribut els valors de la llista
      * de l'atribut privat _bottomNavigationItems
      */
-    constructor(){
+    constructor(): super(){
         this._bottomNavigationItems.value = listOf(
             BottomNavigationScreens.Home,
             BottomNavigationScreens.Favorite,

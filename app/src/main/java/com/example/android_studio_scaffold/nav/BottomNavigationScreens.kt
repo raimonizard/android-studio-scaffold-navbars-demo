@@ -1,5 +1,7 @@
 package com.example.android_studio_scaffold.nav
 
+import com.example.android_studio_scaffold.nav.Routes
+
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.Home

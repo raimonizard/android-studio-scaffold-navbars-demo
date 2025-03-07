@@ -5,9 +5,8 @@ import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import com.example.android_studio_scaffold.viewmodel.ScaffoldViewModel
@@ -24,7 +23,7 @@ fun ScaffoldView(myViewModel: ScaffoldViewModel, navigationController: NavHostCo
                 .fillMaxSize()
                 .padding(paddingValues)
         ){
-            TODO()
+            Text(text = "Encara per implementar")
         }
     }
 }
