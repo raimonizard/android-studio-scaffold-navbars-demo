@@ -1,4 +1,4 @@
-# Android App with SearchBar Composable
+# Android App with Scaffold and TopBar and BottomBar Composables
 ## Android Studio Version
 Android Studio Ladybug Feature Drop | 2024.2.2
 
